@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { EcosystemWrapper } from '@wip-abramson/ecosystem';
-import './App.scss';
-import User from './User';
+import User from './components/User';
 
 const App = () => {
 
