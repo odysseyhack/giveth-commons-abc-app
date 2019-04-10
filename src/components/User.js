@@ -15,7 +15,7 @@ const User = () => {
   return state.user ? (
     <div>
       <h1>{state.user.name}</h1>
-      <button onClick={spendMoney}>Spend Money</button>
+      <button className="eco primary" onClick={spendMoney}>Spend Money</button>
     </div>
   ) :  (
     <h1>Not Logged In</h1>
