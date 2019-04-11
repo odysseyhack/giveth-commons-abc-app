@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { EcosystemWrapper } from '@wip-abramson/ecosystem';
 import User from './components/User';
+import BuyCurveTokens from './components/BuyCurveTokens';
 
 const App = () => {
 
@@ -9,6 +10,8 @@ const App = () => {
       <EcosystemWrapper>
 
         <User/>
+
+        <BuyCurveTokens/>
 
       </EcosystemWrapper>
 

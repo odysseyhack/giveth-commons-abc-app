@@ -2,20 +2,24 @@
  * Created by will on 10/04/19.
  */
 import React from 'react';
-import { UserContext, userActions } from '@wip-abramson/ecosystem';
+import { UserContext, userActions, PrimaryButton, EcosystemDaiAction } from '@wip-abramson/ecosystem';
 
 const User = () => {
   const {state, dispatch} = React.useContext(UserContext);
-  console.log(state)
+  const [amount, setAmount] = React.useState("20");
 
-  const spendMoney = (amount) => {
-    dispatch({type: userActions.spend, amount: 5000});
+  const spendMoney = () => {
+    // console.log()
+
+    dispatch({type: userActions.spend, amount});
   }
 
   return state.user ? (
     <div>
       <h1>{state.user.name}</h1>
-      <button className="eco primary" onClick={spendMoney}>Spend Money</button>
+      <input className="eco" value={amount} onChange={(e) => {setAmount(e.target.value)}}/>
+      <PrimaryButton onClick={spendMoney} name="Spend Money"/>
+      <EcosystemDaiAction buttonName="TEST DAI" actionText="Testing Ecosystem Component Integration"/>
     </div>
   ) :  (
     <h1>Not Logged In</h1>
