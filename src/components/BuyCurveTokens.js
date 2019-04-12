@@ -2,7 +2,7 @@
  * Created by will on 11/04/19.
  */
 import React from 'react';
-import {AugmentedCurveContext, UserContext, userActions, curveActions, PrimaryButton} from '@wip-abramson/ecosystem';
+import {AugmentedCurveContext, UserContext, userActions, curveActions, PrimaryButton} from '@giveth/commons-components';
 
 const BuyCurveTokens = ({}) => {
   const {state, dispatch} = React.useContext(AugmentedCurveContext);

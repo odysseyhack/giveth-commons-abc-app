@@ -1,9 +1,9 @@
 {
-  "name": "example-commons-project",
-  "version": "0.1.0",
+  "name": "@giveth/commons-template-app",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@wip-abramson/ecosystem": "^0.5.0",
+    "@giveth/commons-components": "^0.0.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

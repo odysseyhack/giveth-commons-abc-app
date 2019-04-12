@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { EcosystemWrapper } from '@wip-abramson/ecosystem';
+import { CommonsStateWrapper, CampaignHeader } from '@giveth/commons-components';
 import User from './components/User';
 import BuyCurveTokens from './components/BuyCurveTokens';
 
@@ -7,13 +7,14 @@ const App = () => {
 
   return (
 
-      <EcosystemWrapper>
+      <CommonsStateWrapper>
+        <CampaignHeader/>
 
         <User/>
 
         <BuyCurveTokens/>
 
-      </EcosystemWrapper>
+      </CommonsStateWrapper>
 
 
   );
