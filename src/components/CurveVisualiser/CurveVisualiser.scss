@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+}
+
+p {
+  white-space: pre;
+  text-align: left;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 0.2em 1em;
+  place-content: center;
+}
+
+/* Generic placers */
+.m {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+.c {
+  display: grid;
+  place-content: center;
+}
+
+.recharts-wrapper {
+  margin-bottom: 1.5em;
+}
+
+.top-input {
+  min-width: 9em;
+}
+.top-input.big {
+  min-width: 20em;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

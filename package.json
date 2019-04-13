@@ -3,10 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@giveth/commons-components": "^0.2.0",
+    "@giveth/commons-components": "0.2.0",
+    "chart": "^0.1.2",
+    "chart.js": "^2.8.0",
     "node-sass": "^4.11.0",
     "rc-slider": "^8.6.9",
     "react": "^16.8.6",
+    "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8"
   },

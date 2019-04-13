@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import HatchPhaseHeader from '../HatchPhaseHeader'
 import CurveParametersForm from './CurveParametersForm';
 import CurveVisualisation from '../../CurveVisualisation';
+import CurveVisualer from '../../CurveVisualiser/CurveVisualiser';
 
 const CurveParameters = ({onNextPhase}) => {
 
@@ -22,7 +23,7 @@ How much funding do you want to raise?"/>
         <span className="dai">100 DAI</span>
         <p>Post Hatch Price</p>
       </div>
-      <CurveVisualisation/>
+      <CurveVisualer/>
     </div>
   </div>
 };
