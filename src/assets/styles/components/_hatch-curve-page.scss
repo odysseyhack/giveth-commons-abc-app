@@ -70,7 +70,7 @@
 
   form {
     position: absolute;
-    left: 6.25%;
+    left: 5%;
     right: 61.09%;
     top: 20.99%;
     bottom: -4%;
@@ -86,19 +86,34 @@
       flex: 1;
     }
 
+    .launch-field {
+      label {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 17px;
+        line-height: normal;
+        letter-spacing: -0.01em;
 
+        color: #3A6467;
 
-    label {
-      font-family: Inter UI;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 17px;
-      line-height: normal;
-      letter-spacing: -0.01em;
+        margin-bottom: 30px;
 
-      color: #3A6467;
+      }
 
+      input {
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 17px;
+        line-height: 24px;
+
+        color: #B1C2C5;
+      }
     }
+
+
+
+
 
     button {
       margin: 40px;

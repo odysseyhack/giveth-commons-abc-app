@@ -11,15 +11,28 @@ const CommunityParameters = ({onLaunchCommons}) => {
   const [minimumContribution, setMinimumContribution] = React.useState(20);
   const [time, setTime] = React.useState(2);
   const [convictionTime, setConvictionTime] = React.useState(10);
-  const [exitFee, setExitFee] = React.useState(1);
+  const [exitFeeType, setExitFeeType] = React.useState(1);
+
+  const getExitFee = () => {
+    let exitFee = 0
+    if (exitFeeType === 1) {
+      exitFee = 2;
+    } else if (exitFeeType === 2) {
+      exitFee = 4;
+    } else {
+      exitFee = 6;
+    }
+    return exitFee;
+  }
+
 
   return <div className="community-parameter-phase">
     <HatchPhaseHeader title="Define community guidelines" subtitle="Define your governance principles and parameters. How do you want to engage your community?"/>
     <form >
       <div className="form-fields">
-        <FormField labelText="What is the minimum contribution a Hatcher can make?" value={minimumContribution} setValue={setMinimumContribution}/>
-        <FormField labelText="How Long?" value={time} setValue={setTime}/>
-        <FormField labelText="Conviction time?" value={convictionTime} setValue={setConvictionTime}/>
+        <FormField fieldStyle="launch-field" labelText="What is the minimum contribution a Hatcher can make?" value={minimumContribution} setValue={setMinimumContribution}/>
+        <FormField fieldStyle="launch-field"  labelText="How Long?" value={time} setValue={setTime}/>
+        <FormField fieldStyle="launch-field"  labelText="Conviction time?" value={convictionTime} setValue={setConvictionTime}/>
 
 
 
@@ -27,19 +40,19 @@ const CommunityParameters = ({onLaunchCommons}) => {
           <label>What is your exit fee?</label>
           <div className="radio">
             <label>
-              <input type="radio" value="option1" checked={exitFee === 1} onClick={(e) => {setExitFee(1)}}/>
+              <input type="radio" value="option1" checked={exitFeeType === 1} onClick={(e) => {setExitFeeType(1)}}/>
               Low
             </label>
           </div>
           <div className="radio">
             <label>
-              <input type="radio" value="option2" checked={exitFee === 2} onClick={(e) => {setExitFee(2)}}/>
+              <input type="radio" value="option2" checked={exitFeeType === 2} onClick={(e) => {setExitFeeType(2)}}/>
               Medium
             </label>
           </div>
           <div className="radio">
             <label>
-              <input type="radio" value="option3" checked={exitFee === 3} onClick={(e) => {setExitFee(3)}}/>
+              <input type="radio" value="option3" checked={exitFeeType === 3} onClick={(e) => {setExitFeeType(3)}}/>
               High
             </label>
           </div>
@@ -49,7 +62,11 @@ const CommunityParameters = ({onLaunchCommons}) => {
 
       <div className="space-holder"/>
 
-      <PrimaryButton onClick={() => onLaunchCommons({minimumContribution, time, convictionTime})}>
+      <PrimaryButton onClick={() => {
+        const exitFee = getExitFee();
+        onLaunchCommons({
+          minimumContribution, time, convictionTime, exitFee})
+      }}>
         Launch your Commons
       </PrimaryButton>
 

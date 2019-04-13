@@ -10,8 +10,8 @@ const CampaignParametersForm = ({submitCampaignParameters}) => {
   const [description, setDescription] = React.useState("");
 
   return (<form className="campaign-form">
-    <FormField setValue={setName} value={name} labelText="What is the name of your organisation?"/>
-    <FormField setValue={setDescription} value={description} labelText="Describe your community, organisation or commons"/>
+    <FormField fieldStyle="launch-field" setValue={setName} value={name} labelText="What is the name of your organisation?"/>
+    <FormField fieldStyle="launch-field" setValue={setDescription} value={description} labelText="Describe your community, organisation or commons"/>
     <div className="space-holder"/>
     <PrimaryButton onClick={() => submitCampaignParameters(name, description)}>
       Continue
