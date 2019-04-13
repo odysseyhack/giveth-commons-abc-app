@@ -6,7 +6,9 @@ import CampaignParameters from '../CampaignParameters';
 import CurveParameters from '../CurveParameters';
 import CommunityParameters from '../CommunityParameters';
 import HatchProgressContainer from './HatchProgressContainer';
-
+import CommonsToken from "@giveth/commons-abc-lib";
+const protocol = require("../../integrations/protocol");
+const web3 = require("../../integrations/web3");
 
 const HatchCommonsContainer = () => {
 
@@ -14,7 +16,7 @@ const HatchCommonsContainer = () => {
 
   const [campaignParameters, setCampaignParameters] = React.useState({});
   const [curveParameters, setCurveParameters] = React.useState({});
-
+  const [commonsToken, setCommonsToken] = React.useState(null);
 
   const getHatchPage = () => {
     switch (phase) {
@@ -38,10 +40,28 @@ const HatchCommonsContainer = () => {
     }
   };
 
-  const launchCommons = (communityParameters) => {
-    console.log(campaignParameters)
-    console.log(curveParameters)
-    console.log(communityParameters)
+  const launchCommons = async (communityParameters) => {
+    console.log("UPHERE");
+    const commonsToken = await CommonsToken.deploy(
+      await web3.getAccount(),
+      await protocol.getReserveToken(),
+      142857, // reserveRatio = kappa ~ 6
+      15000000000, // 15gwei
+      curveParameters.fundingPoolPercentage * 10000, // % in ppm
+      curveParameters.initialTokenPrice,
+      curveParameters.initialRaise,
+      await protocol.getFundingPool(),
+      communityParameters.exitFee * 10000 // % in ppm
+    );
+
+    console.log("HERE");
+    console.log(commonsToken);
+
+    setCommonsToken(commonsToken);
+
+    console.log(campaignParameters) // name, description
+    console.log(curveParameters) // initialRaise, fundingPoolPercentage, initialTokenPrice
+    console.log(communityParameters) // minimumContribution, time, convicationTime
   }
 
   return (
