@@ -14,7 +14,7 @@ const CommunityParameters = ({onLaunchCommons}) => {
   const [exitFee, setExitFee] = React.useState(1);
 
   return <div className="community-parameter-phase">
-    <HatchPhaseHeader title="Hatch Curve" subtitle="Set up curve"/>
+    <HatchPhaseHeader title="Define community guidelines" subtitle="Define your governance principles and parameters. How do you want to engage your community?"/>
     <form >
       <div className="form-fields">
         <FormField labelText="What is the minimum contribution a Hatcher can make?" value={minimumContribution} setValue={setMinimumContribution}/>

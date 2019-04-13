@@ -9,7 +9,8 @@ import CurveParametersForm from './CurveParametersForm';
 const CurveParameters = ({onNextPhase}) => {
 
   return <div className="curve-hatch-phase">
-    <HatchPhaseHeader title="Hatch Curve" subtitle="Set up curve"/>
+    <HatchPhaseHeader title="Set your curve parameters" subtitle="Set your curve parameters for your ‘hatch sale’.
+How much funding do you want to raise?"/>
     <CurveParametersForm onSubmit={(parameters) => onNextPhase(parameters)}/>
   </div>
 };

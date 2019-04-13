@@ -73,9 +73,10 @@
     left: 6.25%;
     right: 61.09%;
     top: 20.99%;
-    bottom: 0;
+    bottom: -4%;
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px;
 
     background: #F9FAFB;
     box-shadow: 0px 0px 20px rgba(215, 222, 227, 0.39422), 0px 26px 90px rgba(51, 59, 69, 0.1);
@@ -103,6 +104,7 @@
       margin: 40px;
       justify-self: flex-end;
       border-radius: 100px;
+
     }
 
     .radio-field {
@@ -113,6 +115,7 @@
       }
       .radio {
         display: inline-block;
+        padding: 5px 10%;
       }
     }
 
