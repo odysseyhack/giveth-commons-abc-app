@@ -17,8 +17,9 @@ const CurveParametersForm = ({onSubmit}) => {
     <CurveSlider labelName="Initial Raise" value={initialRaise} setValue={setInitialRaise}/>
     <CurveSlider labelName="Funding Pool Percentage" value={fundingPoolPercentage} setValue={setFundingPoolPercentage}/>
     <CurveSlider labelName="Initial Token Price" value={initialTokenPrice} setValue={setInitialTokenPrice}/>
+    <div className="space-holder"/>
     <PrimaryButton onClick={() => onSubmit({initialRaise, fundingPoolPercentage, initialTokenPrice})}>
-      Next phase
+      Continue
     </PrimaryButton>
   </form>
 };

@@ -2,9 +2,10 @@
  * Created by will on 12/04/19.
  */
 import React from 'react';
-import CampaignParameters from './CampaignParameters';
-import CurveParameters from './CurveParameters';
-import CommunityParameters from './CommunityParameters';
+import CampaignParameters from '../CampaignParameters';
+import CurveParameters from '../CurveParameters';
+import CommunityParameters from '../CommunityParameters';
+import HatchProgressContainer from './HatchProgressContainer';
 
 
 const HatchCommonsContainer = () => {

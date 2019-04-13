@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 const HatchPhaseHeader = ({title, subtitle, hatchPhase}) => {
   return (
     <div className="header hatch">
-      <div className={"hatch-progress " + hatchPhase}/>
       <h1>{title}</h1>
       <h3>{subtitle}</h3>
     </div>

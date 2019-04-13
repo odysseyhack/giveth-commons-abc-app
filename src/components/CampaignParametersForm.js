@@ -11,10 +11,10 @@ const CampaignParametersForm = ({submitCampaignParameters}) => {
 
   return (<form className="campaign-form">
     <FormField setValue={setName} value={name} labelText="What is the name of your organisation?"/>
-    <FormField setValue={setDescription} value={description} labelText="Describe Campaign"/>
-
+    <FormField setValue={setDescription} value={description} labelText="Describe your community, organisation or commons"/>
+    <div className="space-holder"/>
     <PrimaryButton onClick={() => submitCampaignParameters(name, description)}>
-      Next Phase
+      Continue
     </PrimaryButton>
   </form>)
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CommonsStateWrapper, CommonsNavHeader } from '@giveth/commons-components';
-import HatchCommonsContainer from './components/HatchCommonsContainer';
+import HatchCommonsContainer from './components/HatchPage/HatchCommonsContainer';
 
 const App = () => {
 
@@ -8,7 +8,9 @@ const App = () => {
 
       <CommonsStateWrapper>
         <CommonsNavHeader/>
-        <HatchCommonsContainer/>
+        <div className="hatch-curve-page">
+            <HatchCommonsContainer/>
+        </div>
       </CommonsStateWrapper>
   );
 }

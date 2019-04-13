@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import HatchPhaseHeader from './HatchPhaseHeader'
+import HatchPhaseHeader from './HatchPage/HatchPhaseHeader'
 import CurveParametersForm from './CurveParametersForm';
 
 const CurveParameters = ({onNextPhase}) => {
