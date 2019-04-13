@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@giveth/commons-components": "^0.0.1",
+    "@giveth/commons-components": "^0.1.0",
     "node-sass": "^4.11.0",
+    "rc-slider": "^8.6.9",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8"

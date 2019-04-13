@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import { CommonsStateWrapper, CampaignHeader } from '@giveth/commons-components';
+import { CommonsStateWrapper } from '@giveth/commons-components';
 import User from './components/User';
 import BuyCurveTokens from './components/BuyCurveTokens';
+import HatchCommonsContainer from './components/HatchCommonsContainer';
 
 const App = () => {
 
   return (
 
       <CommonsStateWrapper>
-        <CampaignHeader/>
-
-        <User/>
-
-        <BuyCurveTokens/>
+        <HatchCommonsContainer/>
 
       </CommonsStateWrapper>
 
