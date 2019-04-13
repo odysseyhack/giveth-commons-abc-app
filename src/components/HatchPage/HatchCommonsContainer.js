@@ -2,10 +2,10 @@
  * Created by will on 12/04/19.
  */
 import React from 'react';
-import CampaignParameters from '../CampaignParameters';
-import CurveParameters from '../CurveParameters';
-import CommunityParameters from '../CommunityParameters';
-import HatchProgressContainer from './HatchProgressContainer';
+import CampaignParameters from './CampaignParameters/CampaignParameters';
+import CurveParameters from './CurveParameters/CurveParameters';
+import CommunityParameters from './CommunityParameters/CommunityParameters';
+import Launch from './Launch';
 
 
 const HatchCommonsContainer = () => {
@@ -14,6 +14,7 @@ const HatchCommonsContainer = () => {
 
   const [campaignParameters, setCampaignParameters] = React.useState({});
   const [curveParameters, setCurveParameters] = React.useState({});
+  const [communityParameters, setCommunityParameters] = React.useState({});
 
 
   const getHatchPage = () => {
@@ -29,9 +30,12 @@ const HatchCommonsContainer = () => {
           setPhase(3);
         }}/>
       case 3:
-        return <CommunityParameters onLaunchCommons={(communityParameters) => {
-          launchCommons(communityParameters)
+        return <CommunityParameters curveParameter={curveParameters} campaignParameters={campaignParameters} onNextPhase={(communityParameters) => {
+          setCommunityParameters(communityParameters);
+          setPhase(4)
         }}/>;
+      case 4:
+        return <Launch name={campaignParameters.name} curveParameters={curveParameters} communityParameters={communityParameters} />
       default:
         console.log("SHOULD NOT GET HERE BAD PHASE NUMBBER")
 

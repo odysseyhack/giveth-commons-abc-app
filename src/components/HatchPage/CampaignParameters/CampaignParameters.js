@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import HatchPhaseHeader from './HatchPage/HatchPhaseHeader'
+import HatchPhaseHeader from '../HatchPhaseHeader'
 import CampaignParametersForm from './CampaignParametersForm';
 
 const CampaignParameters = ({onNextPage}) => {

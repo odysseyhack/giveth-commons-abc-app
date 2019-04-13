@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {PrimaryButton} from '@giveth/commons-components';
-import CurveSlider from './CurveSlider';
+import CurveSlider from '../../CurveSlider';
 
 
 const CurveParametersForm = ({onSubmit}) => {
@@ -14,9 +14,9 @@ const CurveParametersForm = ({onSubmit}) => {
   const [initialTokenPrice, setInitialTokenPrice] = React.useState(50) ;
 
   return <form className="curve-parameter-form">
-    <CurveSlider labelName="Initial Raise" value={initialRaise} setValue={setInitialRaise}/>
-    <CurveSlider labelName="Funding Pool Percentage" value={fundingPoolPercentage} setValue={setFundingPoolPercentage}/>
-    <CurveSlider labelName="Initial Token Price" value={initialTokenPrice} setValue={setInitialTokenPrice}/>
+    <CurveSlider labelName="How much money are you raising?" value={initialRaise} setValue={setInitialRaise}/>
+    <CurveSlider labelName="How much should be put into the  funding pool?" value={fundingPoolPercentage} setValue={setFundingPoolPercentage}/>
+    <CurveSlider labelName="What is the starting price per token?" value={initialTokenPrice} setValue={setInitialTokenPrice}/>
     <div className="space-holder"/>
     <PrimaryButton onClick={() => onSubmit({initialRaise, fundingPoolPercentage, initialTokenPrice})}>
       Continue

@@ -9,7 +9,7 @@ import 'rc-slider/assets/index.css';
 // Stateless UI Component
 const CurveSlider = ({value, setValue, labelName}) => {
   return(
-    <div className="commons slider-container">
+    <div className="commons slider-container launch-field">
       <label>{labelName}</label>
       <h2>{value}</h2>
       <Slider sliderStyle="slider" value={value} onChange={(newValue) => setValue(newValue)}/>

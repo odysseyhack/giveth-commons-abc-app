@@ -1,16 +1,13 @@
 /**
- * Created by will on 12/04/19.
+ * Created by will on 13/04/19.
  */
 import React from 'react';
-import PropTypes from 'prop-types';
-import HatchPhaseHeader from './HatchPage/HatchPhaseHeader';
 import {PrimaryButton, FormField} from '@giveth/commons-components';
 
-const CommunityParameters = ({onLaunchCommons}) => {
-
+const CommunityParametersForm = ({onNextPhase}) => {
   const [minimumContribution, setMinimumContribution] = React.useState(20);
-  const [time, setTime] = React.useState(2);
-  const [convictionTime, setConvictionTime] = React.useState(10);
+  const [hatchSalePeriod, setHatchSalePeriod] = React.useState(2);
+  const [proposalDuration, setProposalDuration] = React.useState(10);
   const [exitFeeType, setExitFeeType] = React.useState(1);
 
   const getExitFee = () => {
@@ -25,14 +22,12 @@ const CommunityParameters = ({onLaunchCommons}) => {
     return exitFee;
   }
 
-
-  return <div className="community-parameter-phase">
-    <HatchPhaseHeader title="Define community guidelines" subtitle="Define your governance principles and parameters. How do you want to engage your community?"/>
+  return (
     <form >
       <div className="form-fields">
         <FormField fieldStyle="launch-field" labelText="What is the minimum contribution a Hatcher can make?" value={minimumContribution} setValue={setMinimumContribution}/>
-        <FormField fieldStyle="launch-field"  labelText="How Long?" value={time} setValue={setTime}/>
-        <FormField fieldStyle="launch-field"  labelText="Conviction time?" value={convictionTime} setValue={setConvictionTime}/>
+        <FormField fieldStyle="launch-field"  labelText="How long will your hatch sale be?" value={hatchSalePeriod} setValue={setHatchSalePeriod}/>
+        <FormField fieldStyle="launch-field"  labelText="How long will proposals last?" value={proposalDuration} setValue={setProposalDuration}/>
 
 
 
@@ -64,20 +59,14 @@ const CommunityParameters = ({onLaunchCommons}) => {
 
       <PrimaryButton onClick={() => {
         const exitFee = getExitFee();
-        onLaunchCommons({
-          minimumContribution, time, convictionTime, exitFee})
+        onNextPhase({
+          minimumContribution, hatchSalePeriod, proposalDuration, exitFee})
       }}>
-        Launch your Commons
+        Continue
       </PrimaryButton>
 
     </form>
-
-
-  </div>
+  )
 };
 
-CommunityParameters.propTypes = {
-  onLaunchCommons: PropTypes.func.isRequired
-};
-
-export default CommunityParameters;
+export default CommunityParametersForm;

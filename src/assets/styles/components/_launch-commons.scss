@@ -1,0 +1,107 @@
+.launch-commons {
+  span {
+    position: absolute;
+    height: 18px;
+    left: 116px;
+    right: 957px;
+    top: 77px;
+
+    font-family: Inter UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: normal;
+    letter-spacing: -0.02em;
+
+    color: #3A6467;
+  }
+
+  .curve-parameters {
+    position: absolute;
+    height: 87px;
+    left: 445px;
+    right: 567px;
+    top: 77px;
+
+    font-family: Inter UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+
+    color: #3A6467;
+  }
+
+  .community-parameters {
+
+    position: absolute;
+    height: 115px;
+    left: 781px;
+    right: 258px;
+    top: 77px;
+
+    font-family: Inter UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+
+    color: #3A6467;
+
+  }
+
+  .all-set {
+    position: absolute;
+    width: 648.85px;
+    height: 229px;
+    left: 698px;
+    top: 319px;
+
+    h1 {
+
+      position: absolute;
+      height: 72px;
+      left: 779.85px;
+      right: -66.85px;
+      top: 319px;
+
+      font-family: Inter UI;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 60px;
+      line-height: normal;
+      letter-spacing: -0.05em;
+
+      color: #333333;
+    }
+
+    p {
+      position: absolute;
+      height: 47px;
+      left: 779.85px;
+      right: 69.15px;
+      top: 401px;
+
+      font-family: Inter UI;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 17px;
+      line-height: 23px;
+      letter-spacing: -0.01em;
+
+      color: #333333;
+
+      /* Gray 1 */
+      opacity: 0.78;
+    }
+    button {
+      position: absolute;
+      left: 24.83%;
+      right: 24.88%;
+      top: 27.5%;
+      bottom: 25%;
+    }
+  }
+}
