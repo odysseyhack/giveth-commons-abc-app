@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { CommonsStateWrapper } from '@giveth/commons-components';
-import User from './components/User';
-import BuyCurveTokens from './components/BuyCurveTokens';
+import { CommonsStateWrapper, CommonsNavHeader } from '@giveth/commons-components';
 import HatchCommonsContainer from './components/HatchCommonsContainer';
 
 const App = () => {
@@ -9,11 +7,9 @@ const App = () => {
   return (
 
       <CommonsStateWrapper>
+        <CommonsNavHeader/>
         <HatchCommonsContainer/>
-
       </CommonsStateWrapper>
-
-
   );
 }
 
