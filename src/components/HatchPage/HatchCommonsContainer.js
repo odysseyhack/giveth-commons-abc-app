@@ -7,15 +7,17 @@ import CurveParameters from './CurveParameters/CurveParameters';
 import CommunityParameters from './CommunityParameters/CommunityParameters';
 import Launch from './Launch';
 import Use from './Use';
+import { CommonsTokenContext } from "../../context/CommonsToken";
+import { commonsTokenActions } from "../../state/commonsToken";
 
 const HatchCommonsContainer = () => {
 
+  const { state, dispatch } = React.useContext(CommonsTokenContext);
   const [phase, setPhase] = React.useState(1);
 
   const [campaignParameters, setCampaignParameters] = React.useState({});
   const [curveParameters, setCurveParameters] = React.useState({});
   const [communityParameters, setCommunityParameters] = React.useState({});
-  const [commonsToken, setCommonsToken] = React.useState({});
 
   const getHatchPage = () => {
     switch (phase) {
@@ -41,11 +43,11 @@ const HatchCommonsContainer = () => {
                  communityParameters={communityParameters}
                  setCommonsToken={commonsToken => {
                    setPhase(5);
-                   setCommonsToken(commonsToken);
+                   dispatch({ type: commonsTokenActions.setContract, contract: commonsToken });
                  }}
                 />
       case 5:
-        return <Use name={campaignParameters.name} commonsToken={commonsToken} />
+        return <Use name={campaignParameters.name} />
       default:
         console.log("SHOULD NOT GET HERE BAD PHASE NUMBBER")
     }
