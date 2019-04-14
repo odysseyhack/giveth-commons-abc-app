@@ -11,7 +11,7 @@ const CurveParametersForm = ({onSubmit}) => {
 
   const [initialRaise, setInitialRaise] = React.useState(4000000) ;
   const [fundingPoolPercentage, setFundingPoolPercentage] = React.useState(20) ;
-  const [initialTokenPrice, setInitialTokenPrice] = React.useState(0.5) ;
+  const [initialTokenPrice, setInitialTokenPrice] = React.useState(1) ;
 
   // 1 mil to 7.5mil
   const calculateInitialRaisePercentage = () => {

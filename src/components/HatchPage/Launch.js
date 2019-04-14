@@ -18,22 +18,24 @@ const Launch = ({name, curveParameters, communityParameters, setCommonsToken }) 
     const reserveToken = await protocol.getReserveToken();
     const fundingPool = await protocol.getFundingPool();
 
+    console.log(curveParameters) // initialRaise, fundingPoolPercentage, initialTokenPrice
+    console.log(communityParameters) // minimumContribution, time, convicationTime
+
     const commonsToken = await abcLib.CommonsToken.deploy(
       account,
       reserveToken,
       142857, // reserveRatio = kappa ~ 6
       15000000000, // 15gwei
-      curveParameters.fundingPoolPercentage * 10000, // % in ppm
-      curveParameters.initialTokenPrice,
-      curveParameters.initialRaise,
+      Math.ceil(curveParameters.fundingPoolPercentage * 10000), // % in ppm
+      Math.ceil(curveParameters.initialTokenPrice),
+      Math.ceil(curveParameters.initialRaise),
       fundingPool,
-      communityParameters.exitFee * 10000 // % in ppm
+      Math.ceil(communityParameters.exitFee * 10000), // % in ppm
+      Math.ceil(communityParameters.hatchSalePeriod),
+      Math.ceil(communityParameters.minimumContribution)
     );
 
     setCommonsToken(commonsToken);
-
-    console.log(curveParameters) // initialRaise, fundingPoolPercentage, initialTokenPrice
-    console.log(communityParameters) // minimumContribution, time, convicationTime
   }
 
   return (

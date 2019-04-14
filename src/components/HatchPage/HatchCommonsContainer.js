@@ -45,7 +45,6 @@ const HatchCommonsContainer = () => {
                  }}
                 />
       case 5:
-        console.log("HEEYYYY");
         return <Use name={campaignParameters.name} commonsToken={commonsToken} />
       default:
         console.log("SHOULD NOT GET HERE BAD PHASE NUMBBER")
