@@ -3,8 +3,6 @@ const Web3 = require("../integrations/web3");
 export const initialState = {
   curveName: "null",
   contract: null,
-  tokenPrice: 0,
-  tokenSupply: 0,
   balance: 0
 };
 
@@ -13,7 +11,7 @@ export const commonsTokenActions = {
   setContract: "SET_CONTRACT",
   setBalance: "SET_BALANCE",
   buyTokens: "BUY",
-  sellTokens: "SELL"
+  sellTokens: "SELL",
 };
 
 export function reducer(state, action) {
@@ -29,9 +27,11 @@ export function reducer(state, action) {
         contract: action.contract
       };
     case commonsTokenActions.setBalance:
+      let balanceNum = typeof action.balance === "number" ?
+                       action.balance : parseInt(action.balance);
       return {
         ...state,
-        balance: action.balance
+        balance: balanceNum
       };
     case commonsTokenActions.buyTokens:
       // TODO:

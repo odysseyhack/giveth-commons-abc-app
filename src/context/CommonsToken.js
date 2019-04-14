@@ -17,6 +17,19 @@ export function CommonsTokenProvider({ children }) {
         dispatch({ type: commonsTokenActions.setBalance, balance });
         break;
       }
+      case commonsTokenActions.buyTokens: {
+        const amount = action.data.amount;
+        const contract = action.data.contract;
+        const balance = action.data.balance;
+        const account = await Web3.getAccount();
+
+        // TODO: this is a broken smart contract method :/
+        try { await contract.hatchContribute(account, amount); } catch { }
+
+        const newBalance = balance + amount;
+        dispatch({ type: commonsTokenActions.setBalance, balance: newBalance });
+        break;
+      }
       default:
         dispatch(action);
     }

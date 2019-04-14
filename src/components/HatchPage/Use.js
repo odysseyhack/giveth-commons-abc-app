@@ -22,11 +22,18 @@ const Use = () => {
   const [sellAmount, setSellAmount] = React.useState(0);
 
   const buyTokens = () => {
-    dispatch({ type: commonsTokenActions.buyTokens, buyAmount });
+    dispatch({
+      type: commonsTokenActions.buyTokens,
+      data: {
+        amount: buyAmount,
+        contract: state.contract,
+        balance: state.balance
+      }
+    });
   };
 
   const sellTokens = () => {
-    dispatch({ type: commonsTokenActions.sellTokens, sellAmount });
+    dispatch({ type: commonsTokenActions.sellTokens, amount: sellAmount });
   };
 
   return (
@@ -42,7 +49,7 @@ const Use = () => {
         id="adornment-amount"
         value={buyAmount}
         type="number"
-        onChange={event => setBuyAmount(event.target.value)}
+        onChange={event => setBuyAmount(parseInt(event.target.value))}
         startAdornment={
           <InputAdornment position="start">$</InputAdornment>
         } />
@@ -51,7 +58,7 @@ const Use = () => {
         id="adornment-amount"
         value={sellAmount}
         type="number"
-        onChange={event => setSellAmount(event.target.value)}
+        onChange={event => setSellAmount(parseInt(event.target.value))}
         startAdornment={
           <InputAdornment position="start">COMN</InputAdornment>
         } />
