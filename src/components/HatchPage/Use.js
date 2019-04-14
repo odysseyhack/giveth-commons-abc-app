@@ -39,10 +39,13 @@ const Use = () => {
   return (
     <div>
       <Typography variant="h1">
-      {`Name: ${state.curveName}`}
+      {`Name: ${state.name}`}
+      </Typography>
+      <Typography variant="h2">
+      {`Description: ${state.description}`}
       </Typography>
       <CurveVisualizer />
-      <Typography variant="h4">
+      <Typography variant="h6">
       {`User Balance: ${state.balance}`}
       </Typography>
       <Input
@@ -53,7 +56,9 @@ const Use = () => {
         startAdornment={
           <InputAdornment position="start">$</InputAdornment>
         } />
-      <PrimaryButton onClick={buyTokens} />
+      <PrimaryButton onClick={buyTokens}>
+      Give
+      </PrimaryButton>
       <Input
         id="adornment-amount"
         value={sellAmount}
@@ -62,7 +67,9 @@ const Use = () => {
         startAdornment={
           <InputAdornment position="start">COMN</InputAdornment>
         } />
-      <PrimaryButton onClick={sellTokens} />
+      <PrimaryButton onClick={sellTokens}>
+      Redeem
+      </PrimaryButton>
     </div>
   );
 }

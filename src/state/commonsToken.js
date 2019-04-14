@@ -1,13 +1,13 @@
-const Web3 = require("../integrations/web3");
-
 export const initialState = {
-  curveName: "null",
+  name: "",
+  description: "",
   contract: null,
   balance: 0
 };
 
 export const commonsTokenActions = {
   setName: "SET_NAME",
+  setDescription: "SET_DESCRIPTION",
   setContract: "SET_CONTRACT",
   setBalance: "SET_BALANCE",
   buyTokens: "BUY",
@@ -19,7 +19,12 @@ export function reducer(state, action) {
     case commonsTokenActions.setName:
       return {
         ...state,
-        curveName: action.name
+        name: action.name
+      };
+    case commonsTokenActions.setDescription:
+      return {
+        ...state,
+        description: action.description
       };
     case commonsTokenActions.setContract:
       return {
