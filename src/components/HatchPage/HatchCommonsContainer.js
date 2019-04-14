@@ -6,10 +6,7 @@ import CampaignParameters from './CampaignParameters/CampaignParameters';
 import CurveParameters from './CurveParameters/CurveParameters';
 import CommunityParameters from './CommunityParameters/CommunityParameters';
 import Launch from './Launch';
-import HatchProgressContainer from './HatchProgressContainer';
-import CommonsToken from "@giveth/commons-abc-lib";
-const protocol = require("../../integrations/protocol");
-const web3 = require("../../integrations/web3");
+import Use from './Use';
 
 const HatchCommonsContainer = () => {
 
@@ -18,7 +15,7 @@ const HatchCommonsContainer = () => {
   const [campaignParameters, setCampaignParameters] = React.useState({});
   const [curveParameters, setCurveParameters] = React.useState({});
   const [communityParameters, setCommunityParameters] = React.useState({});
-  const [commonsToken, setCommonsToken] = React.useState(null);
+  const [commonsToken, setCommonsToken] = React.useState({});
 
   const getHatchPage = () => {
     switch (phase) {
@@ -38,36 +35,22 @@ const HatchCommonsContainer = () => {
           setPhase(4)
         }}/>;
       case 4:
-        return <Launch name={campaignParameters.name} curveParameters={curveParameters} communityParameters={communityParameters} />
+        return <Launch
+                 name={campaignParameters.name}
+                 curveParameters={curveParameters}
+                 communityParameters={communityParameters}
+                 setCommonsToken={commonsToken => {
+                   setPhase(5);
+                   setCommonsToken(commonsToken);
+                 }}
+                />
+      case 5:
+        console.log("HEEYYYY");
+        return <Use name={campaignParameters.name} commonsToken={commonsToken} />
       default:
         console.log("SHOULD NOT GET HERE BAD PHASE NUMBBER")
-
     }
   };
-
-  const launchCommons = async (communityParameters) => {
-    console.log("UPHERE");
-    const commonsToken = await CommonsToken.deploy(
-      await web3.getAccount(),
-      await protocol.getReserveToken(),
-      142857, // reserveRatio = kappa ~ 6
-      15000000000, // 15gwei
-      curveParameters.fundingPoolPercentage * 10000, // % in ppm
-      curveParameters.initialTokenPrice,
-      curveParameters.initialRaise,
-      await protocol.getFundingPool(),
-      communityParameters.exitFee * 10000 // % in ppm
-    );
-
-    console.log("HERE");
-    console.log(commonsToken);
-
-    setCommonsToken(commonsToken);
-
-    console.log(campaignParameters) // name, description
-    console.log(curveParameters) // initialRaise, fundingPoolPercentage, initialTokenPrice
-    console.log(communityParameters) // minimumContribution, time, convicationTime
-  }
 
   return (
     <div className="hatch-container">

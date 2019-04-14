@@ -5,10 +5,8 @@ export const getReserveToken = async () => {
   // the contract is deployed before launching the app, and that
   // we don't have to deploy a new one for each CommonToken
   const abi = require("@giveth/commons-abc-contracts/build/contracts/ERC20Mintable.json");
-  console.log("FOOOOOO");
   const web3 = await Web3.getWeb3();
-  const networkId = web3.eth.net.getId();
-  console.log("GITITHITITITITIT");
+  const networkId = await web3.eth.net.getId();
   return abi.networks[networkId].address;
 };
 
@@ -17,9 +15,7 @@ export const getFundingPool = async () => {
   // the contract is deployed before launching the app, and that
   // we don't have to deploy a new one for each CommonToken
   const abi = require("@giveth/commons-abc-contracts/build/contracts/FundingPoolMock.json");
-  console.log("BAZZZZZ");
   const web3 = await Web3.getWeb3();
-  const networkId = web3.eth.net.getId();
-  console.log("GOTTITHEREEREER");
+  const networkId = await web3.eth.net.getId();
   return abi.networks[networkId].address;
 };
