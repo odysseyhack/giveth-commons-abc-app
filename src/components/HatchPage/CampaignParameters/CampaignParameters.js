@@ -3,12 +3,12 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import HatchPhaseHeader from './HatchPhaseHeader'
+import HatchPhaseHeader from '../HatchPhaseHeader'
 import CampaignParametersForm from './CampaignParametersForm';
 
 const CampaignParameters = ({onNextPage}) => {
   return <div>
-    <HatchPhaseHeader title="Launch your Commons" subtitle="Raise Funds"/>
+    <HatchPhaseHeader title="Launch your Commons" subtitle="Raise funds, engage communities, support projects, and incentivize action."/>
     <CampaignParametersForm submitCampaignParameters={(name, description) => onNextPage({name, description})}/>
 
   </div>

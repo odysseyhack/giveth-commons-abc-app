@@ -2,23 +2,45 @@
   "name": "@giveth/commons-template-app",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "concurrently 'npm:ganache' 'npm:deploy:start'",
+    "start:app": "react-scripts start",
+    "start:env": "concurrently 'npm:ganache' 'npm:deploy'",
+    "deploy:start": "npm run deploy && npm run start:app",
+    "deploy": "npm explore @giveth/commons-abc-contracts -- npm run deploy",
+    "ganache": "npm explore @giveth/commons-abc-contracts -- npm run ganache",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
-    "@giveth/commons-components": "^0.1.0",
+    "@giveth/commons-abc-contracts": "^0.2.0",
+    "@giveth/commons-abc-lib": "^0.2.3",
+    "@giveth/commons-components": "^0.2.0",
+    "@material-ui/core": "^3.9.3",
+    "chart": "^0.1.2",
+    "chart.js": "^2.8.0",
     "node-sass": "^4.11.0",
     "rc-slider": "^8.6.9",
     "react": "^16.8.6",
+    "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "web3": "^1.0.0-beta.52"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "dotenv": "^7.0.0",
+    "ganache-cli": "^6.4.2",
+    "npm-link-shared": "^0.5.6",
+    "truffle": "^5.0.12",
+    "truffle-hdwallet-provider": "^1.0.6",
+    "truffle-privatekey-provider": "^1.1.0",
+    "wait-on": "^3.2.0"
   },
   "resolutions": {
     "**/react": "16.8.6",
     "**/react-dom": "16.8.6"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,8 +50,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "npm-link-shared": "^0.5.6"
-  }
+  ]
 }

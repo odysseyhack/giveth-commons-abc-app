@@ -1,0 +1,39 @@
+.hatch-curve-vis {
+  .initial-capital {
+    position: absolute;
+    width: 179px;
+    height: 104px;
+    left: 792px;
+    top: 246px;
+
+
+  }
+  .initial-capital, .post-hatch {
+    span {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 76px;
+
+      color: #54617A;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 19px;
+
+      color: #54617A;
+    }
+  }
+
+  .post-hatch {
+    position: absolute;
+    width: 179px;
+    height: 85px;
+    left: 1021px;
+    top: 246px;
+
+  }
+}
