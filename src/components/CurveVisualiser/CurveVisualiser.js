@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./CurveVisualiser.scss";
 
-import Chart from "./Chart";
+// import Chart from "./Chart";
 import Input from "./Input";
 
 import { Line } from "react-chartjs-2";
@@ -172,39 +172,25 @@ function CurveVisualiser() {
             <div className="col c">
               <Line data={plot} />
               
-              <Chart
-                {...{
-                  label: "Reserve (R) [Mil xDAI]",
-                  from: 0,
-                  to: timesR * R0,
-                  steps: 20,
-                  f: priceFofR,
-                  refs: [
-                    { y: p0, label: "p0" },
-                    { y: p1, label: "p1" },
-                    { y: pStart, label: "pStart" },
-                    { y: pdR, label: "pdR" }
-                  ]
-                }}
-              />
+              {/*<Chart*/}
+                {/*{...{*/}
+                  {/*label: "Reserve (R) [Mil xDAI]",*/}
+                  {/*from: 0,*/}
+                  {/*to: timesR * R0,*/}
+                  {/*steps: 20,*/}
+                  {/*f: priceFofR,*/}
+                  {/*refs: [*/}
+                    {/*{ y: p0, label: "p0" },*/}
+                    {/*{ y: p1, label: "p1" },*/}
+                    {/*{ y: pStart, label: "pStart" },*/}
+                    {/*{ y: pdR, label: "pdR" }*/}
+                  {/*]*/}
+                {/*}}*/}
+              {/*/>*/}
             </div>
             <div className="col c">
               <Line data={plotSupply} />
-              <Chart
-                {...{
-                  label: "Supply (R) [Mil Tokens]",
-                  from: 0,
-                  to: timesR ** (1 / k) * S0,
-                  steps: 20,
-                  f: priceFofS,
-                  refs: [
-                    { y: p0, label: "p0" },
-                    { y: p1, label: "p1" },
-                    { y: pStart, label: "pStart" },
-                    { y: pdR, label: "pdR" }
-                  ]
-                }}
-              />
+
             </div>
           </div>
         </div>
