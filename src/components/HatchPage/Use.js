@@ -32,9 +32,12 @@ const Use = () => {
   return (
     <div>
       <Typography variant="h1">
-      {state.curveName}
+      {`Name: ${state.curveName}`}
       </Typography>
       <CurveVisualizer />
+      <Typography variant="h4">
+      {`User Balance: ${state.balance}`}
+      </Typography>
       <Input
         id="adornment-amount"
         value={buyAmount}
