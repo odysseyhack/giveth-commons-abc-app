@@ -5,6 +5,7 @@
   "scripts": {
     "start": "concurrently 'npm:ganache' 'npm:deploy:start'",
     "start:app": "react-scripts start",
+    "start:env": "concurrently 'npm:ganache' 'npm:deploy'",
     "deploy:start": "npm run deploy && npm run start:app",
     "deploy": "npm explore @giveth/commons-abc-contracts -- npm run deploy",
     "ganache": "npm explore @giveth/commons-abc-contracts -- npm run ganache",

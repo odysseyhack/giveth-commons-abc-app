@@ -6,34 +6,32 @@ import PropTypes from 'prop-types';
 import {PrimaryButton} from '@giveth/commons-components';
 import CurveSlider from '../../CurveSlider';
 
-
-const CurveParametersForm = ({onSubmit}) => {
-
-  const [initialRaise, setInitialRaise] = React.useState(4000000) ;
-  const [fundingPoolPercentage, setFundingPoolPercentage] = React.useState(20) ;
-  const [initialTokenPrice, setInitialTokenPrice] = React.useState(1) ;
+const CurveParametersForm = ({
+  onSubmit,
+  initialRaise,
+  setInitialRaise,
+  fundingPoolPercentage,
+  setFundingPoolPercentage,
+  initialTokenPrice,
+  setInitialTokenPrice
+}) => {
 
   // 1 mil to 7.5mil
-  const calculateInitialRaisePercentage = () => {
+  const calculateInitialRaisePercentage = (value) => {
     const min = 1000000;
-    console.log("raise", initialRaise)
     // ((input - min) * 100) / (max - min)
-    const temp = ((initialRaise - min)* 100) / 6500000;
-    console.log(temp)
+    const temp = ((value - min)* 100) / 6500000;
     return Math.floor(temp)
   };
 
-  const calculateFundingPoolPercentage = () => {
+  const calculateFundingPoolPercentage = (value) => {
     const min = 10;
-    return (fundingPoolPercentage - min) * 100 /40
+    return (value - min) * 100 /40
   };
 
-  const calculateInitialTokenPricePercentage = () => {
+  const calculateInitialTokenPricePercentage = (value) => {
     const min = 0.1;
-    // console.log(initialTokenPrice);
-    console.log((initialTokenPrice - min) * 100 / 0.9);
-
-    return ((initialTokenPrice - min) * 100 / 0.9)
+    return ((value - min) * 100 / 0.9)
   }
 
   return <form className="curve-parameter-form">
@@ -41,7 +39,7 @@ const CurveParametersForm = ({onSubmit}) => {
     <CurveSlider labelName="How much should be put into the  funding pool?" calculatePercentage={calculateFundingPoolPercentage} value={fundingPoolPercentage} setValue={(value) => {setFundingPoolPercentage((value * 40 / 100) + 10)}}/>
     <CurveSlider labelName="What is the starting price per token?" calculatePercentage={calculateInitialTokenPricePercentage} value={initialTokenPrice} setValue={(value) => {setInitialTokenPrice(((value * 0.9 / 100) + 0.1))}}/>
     <div className="space-holder"/>
-    <PrimaryButton onClick={() => onSubmit({initialRaise, fundingPoolPercentage, initialTokenPrice})}>
+    <PrimaryButton onClick={() => onSubmit()}>
       Continue
     </PrimaryButton>
   </form>
