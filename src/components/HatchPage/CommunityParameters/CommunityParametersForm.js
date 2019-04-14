@@ -6,8 +6,8 @@ import {PrimaryButton, FormField} from '@giveth/commons-components';
 
 const CommunityParametersForm = ({onNextPhase}) => {
   const [minimumContribution, setMinimumContribution] = React.useState(20);
-  const [hatchSalePeriod, setHatchSalePeriod] = React.useState(2);
-  const [proposalDuration, setProposalDuration] = React.useState(10);
+  const [hatchSalePeriod, setHatchSalePeriod] = React.useState(20);
+  const [proposalDuration, setProposalDuration] = React.useState(3);
   const [exitFeeType, setExitFeeType] = React.useState(1);
 
   const getExitFee = () => {

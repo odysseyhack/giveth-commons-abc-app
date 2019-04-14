@@ -3,15 +3,14 @@ import "./CurveVisualizer.scss";
 
 import { Line } from "react-chartjs-2";
 
-function CurveVisualizer() {
+function CurveVisualizer({theta, initialRaise, startPrice}) {
   // Curve parameters
   const [k, setK] = useState(4);
-  const [theta, setTheta] = useState(35); // initial funding pool allocation
-  const [d0, setD0] = useState(3e6); // initial raise xDAI
-  const [p0, setP0] = useState(0.01); // initial price xDAI
+  // const [theta, setTheta] = useState(35); // initial funding pool allocation
+
   // Sale parameters
-  const R0 = (1 - theta / 100) * d0; // initial Reserve, xDAI
-  const S0 = d0 / p0; // initial supply, Tokens
+  const R0 = (1 - theta / 100) * initialRaise; // initial Reserve, xDAI
+  const S0 = initialRaise / startPrice; // initial supply, Tokens
   const V0 = S0 ** k / R0; // invariant coef
 
   const [timesR, setTimesR] = useState(2);
@@ -61,8 +60,8 @@ function CurveVisualizer() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="curve-vis">
+      <header className="header">
         <div className="container">
           <div className="row m">
             <div className="col c">

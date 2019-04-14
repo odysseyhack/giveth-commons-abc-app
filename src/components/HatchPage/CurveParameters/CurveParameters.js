@@ -13,6 +13,19 @@ const CurveParameters = ({onNextPhase}) => {
   const [fundingPoolPercentage, setFundingPoolPercentage] = React.useState(20) ;
   const [initialTokenPrice, setInitialTokenPrice] = React.useState(1) ;
 
+  const calculatePostHatchPrice = () => {
+    const k = 4;
+    const initialReserve = (initialRaise) * ((100 - fundingPoolPercentage)/100);
+    const intitialSupply = initialRaise / initialTokenPrice;
+
+    console.log(intitialSupply, initialReserve, k);
+    const invarientCoeff = (intitialSupply ** k) / initialReserve;
+
+    // _R => (k * _R ** ((k - 1) / k)) / V0 ** (1 / k);
+    const temp =  Math.floor(((k * initialReserve ** ((k - 1) / k)) / invarientCoeff ** (1 / k)) * 100);
+    return temp/100
+  }
+
   return <div className="curve-hatch-phase">
     <HatchPhaseHeader title="Set your curve parameters" subtitle="Set your curve parameters for your ‘hatch sale’.
 How much funding do you want to raise?"/>
@@ -27,14 +40,14 @@ How much funding do you want to raise?"/>
     />
     <div className="hatch-curve-vis">
       <div className="initial-capital">
-        <span>775 DAI</span>
+        <span>{Math.floor(fundingPoolPercentage / 100 * initialRaise)} XDAI</span>
         <p>Initial Capital Available</p>
       </div>
       <div className="post-hatch">
-        <span className="dai">100 DAI</span>
+        <span className="dai">{calculatePostHatchPrice()} XDAI/Token</span>
         <p>Post Hatch Price</p>
       </div>
-      <CurveVisualizer />
+      <CurveVisualizer theta={fundingPoolPercentage} initialRaise={initialRaise} startPrice={initialTokenPrice} />
     </div>
   </div>
 };

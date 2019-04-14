@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 p {
   white-space: pre;
@@ -13,22 +10,6 @@ p {
   pointer-events: none;
 }
 
-.data-grid {
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
-  grid-gap: 0.2em 1em;
-  place-content: center;
-}
-
-/* Generic placers */
-.m {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-}
-.c {
-  display: grid;
-  place-content: center;
-}
 
 .recharts-wrapper {
   margin-bottom: 1.5em;
@@ -41,13 +22,7 @@ p {
   min-width: 20em;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+
 
 .App-link {
   color: #61dafb;

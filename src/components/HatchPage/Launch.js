@@ -18,8 +18,8 @@ const Launch = ({name, curveParameters, communityParameters, setCommonsToken }) 
     const reserveToken = await protocol.getReserveToken();
     const fundingPool = await protocol.getFundingPool();
 
-    console.log(curveParameters) // initialRaise, fundingPoolPercentage, initialTokenPrice
-    console.log(communityParameters) // minimumContribution, time, convicationTime
+    // console.log(curveParameters) // initialRaise, fundingPoolPercentage, initialTokenPrice
+    // console.log(communityParameters) // minimumContribution, time, convicationTime
 
     const commonsToken = await abcLib.CommonsToken.deploy(
       account,
@@ -35,6 +35,8 @@ const Launch = ({name, curveParameters, communityParameters, setCommonsToken }) 
       Math.ceil(communityParameters.minimumContribution)
     );
 
+    console.log(commonsToken);
+
     setCommonsToken(commonsToken);
   }
 
@@ -42,15 +44,15 @@ const Launch = ({name, curveParameters, communityParameters, setCommonsToken }) 
     <div className="launch-commons">
       <span>{name}</span>
       <div className="curve-parameters">
-        <div>Initial Raise : <b>{curveParameters.initialRaise}</b></div>
-        <div>Initial Price Point : <b>{curveParameters.initialTokenPrice}</b></div>
-        <div>Funding Pool : <b>{curveParameters.fundingPoolPercentage}</b></div>
+        <div>Initial Raise : <b>{curveParameters.initialRaise}</b> XDAI</div>
+        <div>Initial Price Point : <b>{curveParameters.initialTokenPrice}</b> XDAI</div>
+        <div>Funding Pool : <b>{curveParameters.fundingPoolPercentage * curveParameters.initialRaise}</b> XDAI</div>
       </div>
       <span className="community-parameters">
-        <div>Minimum contribution : <b>{communityParameters.minimumContribution}</b></div>
-        <div>Hatch Sale Period : <b>{curveParameters.fundingPoolPercentage}</b></div>
-        <div>Proposal duration : <b>{communityParameters.proposalDuration}</b></div>
-        <div>Exit fee : <b>{communityParameters.exitFee}</b></div>
+        <div>Minimum contribution : <b>{communityParameters.minimumContribution} XDAI</b></div>
+        <div>Hatch Sale Period : <b>{communityParameters.hatchSalePeriod}</b> Days</div>
+        <div>Proposal duration : <b>{communityParameters.proposalDuration}</b> Days</div>
+        <div>Exit fee : <b>{communityParameters.exitFee}</b> %</div>
 
       </span>
 
