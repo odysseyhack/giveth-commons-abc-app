@@ -1,8 +1,8 @@
 import React from "react";
-// import dai from "../assets/images/dai.png";
-// import { changeState } from "../stores/navigation";
+
 import { PrimaryButton, ViewContext, viewActions, views } from "@giveth/commons-components";
 import ConvictionVoting from "./ConvictionVoting";
+import DaiProgressBar from './DaiProgressBar';
 // import { maxHeaderSize } from "http";
 
 const daiUrl = process.env.PUBLIC_URL + '/images/dai.png';
@@ -116,20 +116,7 @@ const Milestones = () => {
                 {/* <PrimaryButton name="Voting weight 25000" /> */}
               </td>
               <td>
-                <div className="progress-text">
-                  <img src={daiUrl} />
-                  <p>{currentValue}</p>
-                  <p className="grey"> / {maxValue} xDAI</p>
-                </div>
-                <div className="progress-bar">
-                  <div>
-                    <div
-                      style={{
-                        transform: `scaleX(${currentValue / maxValue})`
-                      }}
-                    />
-                  </div>
-                </div>
+                <DaiProgressBar currentValue={currentValue} maxValue={maxValue} />
                 <ConvictionVoting
                   globalparams={globalparams}
                   convictions={convictions}
