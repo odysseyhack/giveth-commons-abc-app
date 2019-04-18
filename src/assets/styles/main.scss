@@ -5,7 +5,13 @@
 @import "components/hatch-curve-vis";
 @import "components/commons-overview";
 @import "components/launch-commons";
+@import "components/hatch-curve-overview-page";
+@import "components/units-dropdown";
+@import "components/milestones";
+@import "components/buy-sell-container";
+@import "components/currenncy-input";
+@import "components/curve-slider";
 
 body {
-  overflow: hidden;
+  //overflow: hidden;
 }

@@ -3,30 +3,31 @@
  */
 import React from 'react';
 import {PrimaryButton, FormField} from '@giveth/commons-components';
-import { CommonsTokenContext } from "../../../context/CommonsToken";
-import { commonsTokenActions } from "../../../state/commonsToken";
+import UnitsDropdown from "../../UnitsDropdown"
 
 const CampaignParametersForm = ({submitCampaignParameters}) => {
 
-  const { state, dispatch } = React.useContext(CommonsTokenContext);
+    const [name, setName] = React.useState("");
+  const [description, setDescription] = React.useState("");
+
 
   return (<form className="campaign-form">
     <FormField
       placeholder="Organisation name"
       fieldStyle="launch-field"
-      setValue={(name) => dispatch({ type: commonsTokenActions.setName, name })}
-      value={state.name}
+      setValue={(name) => setName(name)}
+      value={name}
       labelText="What is the name of your organisation?"
     />
     <FormField
       placeholder="Description..."
       fieldStyle="launch-field"
-      setValue={(description) => dispatch({ type: commonsTokenActions.setDescription, description })}
-      value={state.description}
+      setValue={(description) => setDescription(description)}
+      value={description}
       labelText="Describe your community, organisation or commons"
     />
     <div className="space-holder"/>
-    <PrimaryButton onClick={() => submitCampaignParameters(state.name, state.description)}>
+    <PrimaryButton onClick={() => submitCampaignParameters(name, description)}>
       Continue
     </PrimaryButton>
   </form>)

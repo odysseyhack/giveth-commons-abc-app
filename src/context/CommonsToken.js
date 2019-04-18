@@ -24,7 +24,7 @@ export function CommonsTokenProvider({ children }) {
         const account = await Web3.getAccount();
 
         // TODO: this is a broken smart contract method :/
-        try { await contract.hatchContribute(account, amount); } catch { }
+        try { await contract.hatchContribute(account, amount); } catch(error) { }
 
         const newBalance = balance + amount;
         dispatch({ type: commonsTokenActions.setBalance, balance: newBalance });

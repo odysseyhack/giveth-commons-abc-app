@@ -63,11 +63,9 @@ function CurveVisualizer({theta, initialRaise, startPrice}) {
     <div className="curve-vis">
       <header className="header">
         <div className="container">
-          <div className="row m">
-            <div className="col c">
+
               <Line data={plot} />
-            </div>
-          </div>
+
         </div>
       </header>
     </div>

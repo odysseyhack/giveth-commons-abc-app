@@ -35,9 +35,30 @@ const CurveParametersForm = ({
   }
 
   return <form className="curve-parameter-form">
-    <CurveSlider labelName="How much money are you raising?" calculatePercentage={calculateInitialRaisePercentage} value={initialRaise} setValue={(value) => {setInitialRaise(Math.floor((value * 6500000/100) + 1000000))}}/>
-    <CurveSlider labelName="How much should be put into the  funding pool?" calculatePercentage={calculateFundingPoolPercentage} value={fundingPoolPercentage} setValue={(value) => {setFundingPoolPercentage((value * 40 / 100) + 10)}}/>
-    <CurveSlider labelName="What is the starting price per token?" calculatePercentage={calculateInitialTokenPricePercentage} value={initialTokenPrice} setValue={(value) => {setInitialTokenPrice(((value * 0.9 / 100) + 0.1))}}/>
+    <CurveSlider
+      labelName="How much money are you raising?"
+      calculatePercentage={calculateInitialRaisePercentage}
+      value={initialRaise}
+      setValueFromSlider={(value) => {setInitialRaise(Math.floor((value * 6500000/100) + 1000000))}}
+      setValueFromInputField={setInitialRaise}
+      isXDAI={true}
+    />
+    <CurveSlider
+      labelName="How much should be put into the  funding pool?"
+      value={fundingPoolPercentage}
+      calculatePercentage={calculateFundingPoolPercentage}
+      setValueFromSlider={(value) => {setFundingPoolPercentage((value * 40 / 100) + 10)}}
+      setValueFromInputField={setFundingPoolPercentage}
+      isXDAI={false}
+    />
+    <CurveSlider
+      labelName="What is the starting price per token?"
+      value={initialTokenPrice}
+      calculatePercentage={calculateInitialTokenPricePercentage}
+      setValueFromSlider={(value) => {setInitialTokenPrice(((value * 0.9 / 100) + 0.1))}}
+      setValueFromInputField={setInitialTokenPrice}
+      isXDAI={true}
+    />
     <div className="space-holder"/>
     <PrimaryButton onClick={() => onSubmit()}>
       Continue

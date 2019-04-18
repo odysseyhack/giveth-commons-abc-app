@@ -1,0 +1,42 @@
+.currency-input {
+  display: flex;
+
+
+  .input-field {
+    align-self: center;
+    display: flex;
+    padding-left: 20px;
+    flex: 1;
+    flex-direction: column;
+
+    label {
+      font-size: 12px;
+      line-height: normal;
+
+      color: #5A5A5A;
+
+      opacity: 0.78;
+    }
+
+    input {
+      margin-top: 10px ;
+      width: 150px;
+      border: none;
+      font-size: 22px;
+      line-height: normal;
+
+      color: #C4C4C4;
+
+      opacity: 0.78;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .units-dropdown {
+    align-self: center;
+    padding: 5px 10px;
+  }
+}

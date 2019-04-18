@@ -1,0 +1,126 @@
+.milestones-wrapper {
+  max-width: 1340px;
+  margin: 2rem auto;
+  border: 1px solid rgba(58, 100, 103, 0.12);
+  border-radius: 5px;
+}
+
+.eco-milestones {
+  .navbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      margin-right: 2rem;
+    }
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    padding: 0;
+    margin-left: 3rem;
+
+    li {
+      list-style-type: none;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #3a6467;
+      padding: 0.5rem 1rem;
+      margin-right: 2rem;
+    }
+    li:hover {
+      cursor: pointer;
+    }
+    li.selected,
+    li:hover {
+      color: white;
+      background-color: #17a2b8;
+      border-radius: 100px;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+      border-top: 1px solid rgba(58, 100, 103, 0.12);
+      color: #3a6467;
+      font-size: 14px;
+
+      td {
+        padding: 1rem 2rem;
+
+        .milestone-title {
+          max-width: 300px;
+        }
+
+        .title {
+          color: #3a6467;
+          font-size: 16px;
+        }
+        .subtext {
+          color: #666666;
+        }
+        .longtext {
+          max-width: 300px;
+          white-space: normal;
+        }
+        .progress-text {
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+          color: #3a6467;
+
+          .grey {
+            color: #999999;
+          }
+
+          img,
+          p {
+            margin-right: 5px;
+          }
+        }
+        .progress-bar > div {
+          width: 100%;
+          height: 10px;
+          background: rgb(237, 243, 246) none repeat scroll 0% 0%;
+          border-radius: 2px;
+        }
+        .progress-bar > div > div {
+          height: 10px;
+          background: linear-gradient(to right, #1bdd9d, #2cc9cc) scroll 0% 0%;
+          border-radius: 2px;
+          transform-origin: 0px 0px 0px;
+        }
+        .donate-xdai {
+          display: flex;
+          align-items: center;
+          padding: 0.5rem 1rem;
+          border-radius: 3px;
+          background: white;
+          border-color: transparent;
+          width: 100%;
+
+          img {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    tr:first-child > td {
+      padding: 2rem 2rem 1rem 2rem;
+    }
+
+    tr:nth-child(2) td:first-child {
+      cursor: pointer;
+    }
+
+    tr:not(:first-child):hover {
+      box-shadow: 0px 0px 10px rgba(23, 162, 184, 0.2);
+    }
+  }
+}

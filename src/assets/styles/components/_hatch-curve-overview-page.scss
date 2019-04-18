@@ -1,0 +1,35 @@
+.hatch-curve-overview-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 10px 60px;
+
+  grid-template-areas: "buy-sell curve"
+                        "community community";
+
+  .curve-vis {
+    grid-area: curve;
+    background: #FAFAFA;
+    display: flex;
+    align-content: center;
+    margin: 60px;
+
+    .header {
+      width: 100%;
+
+      padding: 10px 50px;
+      .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .buy-sell-container {
+    grid-area: buy-sell;
+  }
+
+
+
+}

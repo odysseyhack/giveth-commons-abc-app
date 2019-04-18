@@ -6,6 +6,7 @@ export const initialState = {
 };
 
 export const commonsTokenActions = {
+  initialize: "INITIALIZE",
   setName: "SET_NAME",
   setDescription: "SET_DESCRIPTION",
   setContract: "SET_CONTRACT",
@@ -16,6 +17,14 @@ export const commonsTokenActions = {
 
 export function reducer(state, action) {
   switch (action.type) {
+    case commonsTokenActions.initialize: {
+      return {
+        name: action.name,
+        description: action.description,
+        contract: action.contract,
+        balance: 0
+      };
+    }
     case commonsTokenActions.setName:
       return {
         ...state,

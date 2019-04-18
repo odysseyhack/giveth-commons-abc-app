@@ -5,6 +5,15 @@
   align-items: center;
   justify-content: center;
 
+  .hatch-container {
+    width: 100%;
+
+    .header {
+      margin: 0 auto;
+      width: 800px;
+    }
+  }
+
   .header {
     h1 {
       position: absolute;
@@ -100,24 +109,7 @@
 
       }
 
-      input {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 36px;
-        line-height: normal;
 
-        color: #3A6467;
-      }
-
-      input {
-
-        font-style: normal;
-        font-weight: normal;
-        font-size: 17px;
-        line-height: 24px;
-
-        color: #B1C2C5;
-      }
     }
 
     button {

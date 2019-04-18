@@ -1,0 +1,89 @@
+.buy-sell-container {
+
+  margin: 60px;
+
+  background: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+
+  .inner-container {
+    margin: 30px;
+    background: #FFFFFF;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    .tabs {
+
+      display: flex;
+      justify-content: center;
+      padding-top: 10px;
+
+
+
+      button {
+        &:first-child {
+          position: relative;
+          left: 30px;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &.in-focus {
+          background: #F9FAFB;
+          box-shadow: 0px 0px 20px rgba(215, 222, 227, 0.39422), 0px 26px 90px rgba(51, 59, 69, 0.1);
+          z-index: 1;
+        }
+
+        font-weight: bold;
+        font-size: 13px;
+        line-height: normal;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: #5888DF;
+
+        opacity: 0.78;
+
+
+
+        background: #FAFAFA;
+        border: 1px solid #E9E9E9;
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 10px 35px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .currency-input {
+      margin: 30px 20px;
+      padding: 10px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+      background: #FFFFFF;
+      border: 1px solid #F4F4F4;
+      box-sizing: border-box;
+      border-radius: 20px;
+
+    }
+
+    button {
+      &.eco {
+        margin: 20px 30px;
+        width: 170px;
+        align-self: flex-end;
+        text-align: center;
+      }
+    }
+
+
+  }
+
+}
