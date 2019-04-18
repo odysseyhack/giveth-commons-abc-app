@@ -5,8 +5,6 @@ import ConvictionVoting from "./ConvictionVoting";
 import DaiProgressBar from './DaiProgressBar';
 // import { maxHeaderSize } from "http";
 
-const daiUrl = process.env.PUBLIC_URL + '/images/dai.png';
-
 const globalparams = {
   alpha: 90,
   totaltime: 100
@@ -27,7 +25,7 @@ const milestones = [
       "Aqua array detects increasing concentration of unwanted substance 09A. Bad actor is autofactory 01a. Proposal is shutdown, further investigation, maintenance and resolution of error.",
     currentValue: 2000,
     maxValue: 5000,
-    treshold: 150000
+    threshold: 150000
   },
   {
     title: "Milestone: Rainwater Collectors for Namibia",
@@ -36,7 +34,7 @@ const milestones = [
       "Support 15 rural commonities in establishing sustainable water sources by installing rainwater collectors.",
     currentValue: 15000,
     maxValue: 15000,
-    treshold: 100000
+    threshold: 100000
   }
 ].map((milestone, i) => {
   return {
@@ -105,7 +103,7 @@ const Milestones = () => {
              currentValue,
              maxValue,
              convictions,
-             treshold
+             threshold
            }) => (
             <>
             <tr onClick={() => dispatch({type: viewActions.changeView, view: views.selectedMilestone})}>
@@ -120,7 +118,7 @@ const Milestones = () => {
                 <ConvictionVoting
                   globalparams={globalparams}
                   convictions={convictions}
-                  treshold={treshold}
+                  threshold={threshold}
                 />
               </td>
               <td>

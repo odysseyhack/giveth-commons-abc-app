@@ -10,7 +10,7 @@ class Me extends Component {
     this.state = {
       globalparams: props.globalparams,
       convictions: props.convictions,
-      treshold: props.treshold
+      treshold: props.threshold
     };
   }
 
