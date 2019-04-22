@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@giveth/commons-abc-contracts": "^0.2.1",
-    "@giveth/commons-abc-lib": "^0.2.3",
+    "@giveth/commons-abc-lib": "^0.2.4",
     "@giveth/commons-components": "^0.3.1",
     "@material-ui/core": "^3.9.3",
     "chart": "^0.1.2",
